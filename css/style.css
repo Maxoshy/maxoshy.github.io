@@ -131,6 +131,14 @@ body {
     gap: 35px 20px;
 }
 
+.project-featured {
+    grid-column: 1 / -1;
+}
+
+.project-featured .project-image {
+    aspect-ratio: 16 / 7;
+}
+
 
 .project {
     color: inherit;
@@ -277,4 +285,48 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* -------------------------
+   ILLUSTRATION SECTION
+------------------------- */
+
+.illustration-section {
+    margin-top: 60px;
+}
+
+
+.illustration-feature {
+    width: 100%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.illustration-feature video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.illustration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.illustration-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.illustration-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.design-title {
+    margin-bottom: 60px;
 }
