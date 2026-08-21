@@ -8,15 +8,19 @@
     padding: 0;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     background: #0a0a0a;
     color: #f2f2f2;
+
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 
 /* ------------------------------
@@ -29,11 +33,13 @@ body {
 }
 
 
+
 /* ------------------------------
    SIDEBAR
 ------------------------------ */
 
 .sidebar {
+
     width: 220px;
     height: 100vh;
 
@@ -47,53 +53,106 @@ body {
     flex-direction: column;
 
     border-right: 1px solid #333;
+
 }
 
 
+
+/* LOGO */
 .logo {
-    color: #f2f2f2;
+    display: block;
+    width: 130px
     text-decoration: none;
-
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -1.5px;
 }
 
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* NAVIGATION */
 
 .navigation {
     display: flex;
     flex-direction: column;
-
     gap: 10px;
-
     margin-top: 70px;
+}
+
+.navigation a:nth-child(3) {
+    margin-top: 20px;
 }
 
 
 .navigation a {
+
     color: #f2f2f2;
+
     text-decoration: none;
 
     font-size: 14px;
+
     text-transform: uppercase;
 
-    transition: opacity 0.2s ease;
+    transition:
+        opacity 0.2s ease,
+        background-position 0.3s ease;
+
 }
 
+
+
+/* HOVER */
 
 .navigation a:hover {
+
     opacity: 0.45;
+
 }
 
 
+
+/* ACTIVE PAGE */
+
+.navigation a.active {
+
+    background: linear-gradient(
+        90deg,
+        #b8ff38 0%,
+        #d9ef52 35%,
+        #f39bc9 70%,
+        #d94da5 100%
+    );
+
+    background-size: 200% auto;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    font-weight: 600;
+
+}
+
+
+
+/* SIDEBAR FOOTER */
+
 .sidebar-footer {
+
     margin-top: auto;
 
     font-size: 11px;
+
     line-height: 1.5;
 
     color: #888;
+
 }
+
 
 
 /* ------------------------------
@@ -102,21 +161,40 @@ body {
 
 .content {
     margin-left: 220px;
-
     width: calc(100% - 220px);
-
-    padding: 28px;
+    max-width: 1400px;
+    padding: 50px;
 }
 
 
-.intro {
+/* ------------------------------
+   SECTION TITLES
+------------------------------ */
+
+.section-title {
+
+    color: #f2f2f2;
+
+    font-size: 16px;
+
+    text-transform: uppercase;
+
+}
+
+
+.design-title {
+
     margin-bottom: 35px;
 
-    color: #888;
-
-    font-size: 12px;
-    text-transform: uppercase;
 }
+
+
+.illustration-title {
+
+    margin-bottom: 35px;
+
+}
+
 
 
 /* ------------------------------
@@ -125,35 +203,59 @@ body {
 
 .work-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
+    gap: 40px 25px;
+}
 
-    gap: 35px 20px;
+
+
+/* FEATURED PROJECT */
+
+.project-featured {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.project-featured .project-image {
+    aspect-ratio: 16 / 6.5;
+    max-height: 600px;
 }
 
 .project-featured {
-    grid-column: 1 / -1;
+    margin-bottom: 50px;
 }
 
-.project-featured .project-image {
-    aspect-ratio: 16 / 7;
-}
 
+/* PROJECT */
 
 .project {
+
     color: inherit;
+
     text-decoration: none;
+
 }
 
 
+
+/* PROJECT IMAGE */
+
 .project-image {
+
     width: 100%;
+
     aspect-ratio: 4 / 3;
+
+    overflow: hidden;
 
     background: #202020;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border: 1px solid #333;
@@ -161,46 +263,120 @@ body {
     transition:
         transform 0.35s ease,
         background 0.35s ease;
+
 }
 
 
-.project-large .project-image {
-    aspect-ratio: 16 / 10;
+.project-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
 }
 
 
-.project-image span {
-    color: #666;
 
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
+/* PROJECT HOVER */
 
 .project:hover .project-image {
+
     transform: scale(0.985);
+
     background: #292929;
+
 }
 
 
+
+/* PROJECT INFO */
+
 .project-info {
+
     padding-top: 12px;
+
 }
 
 
 .project-info h2 {
+
     font-size: 17px;
+
     font-weight: 500;
 
     margin-bottom: 5px;
+
 }
 
 
 .project-info p {
+
     color: #777;
 
     font-size: 12px;
+
 }
+
+
+
+/* ------------------------------
+   ILLUSTRATION PAGE
+------------------------------ */
+
+.illustration-feature {
+
+    width: 100%;
+
+    margin-bottom:40x;
+
+    overflow: hidden;
+
+}
+
+
+.illustration-feature video {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+
+/* ILLUSTRATION GRID */
+
+.illustration-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+
+.illustration-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.illustration-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 
 
 /* ------------------------------
@@ -209,115 +385,197 @@ body {
 
 @media (max-width: 700px) {
 
+
     .site {
+
         display: block;
+
     }
 
 
+
+    /* SIDEBAR */
+
     .sidebar {
+
         position: sticky;
 
         width: 100%;
+
         height: auto;
 
         padding: 18px;
 
         flex-direction: row;
+
         align-items: center;
 
         border-right: none;
+
         border-bottom: 1px solid #333;
+
+        z-index: 100;
+
+        background: #0a0a0a;
+
     }
 
 
+
+    /* NAVIGATION */
+
     .navigation {
+
         margin: 0 0 0 auto;
 
         flex-direction: row;
+
         gap: 14px;
+
     }
 
 
     .navigation a {
+
         font-size: 10px;
+
     }
 
+
+
+    /* FOOTER */
 
     .sidebar-footer {
+
         display: none;
+
     }
 
 
+
+    /* CONTENT */
+
     .content {
+
         margin-left: 0;
 
         width: 100%;
 
         padding: 18px;
+
     }
 
 
+
+    /* PROJECT GRID */
+
     .work-grid {
+
         grid-template-columns: 1fr;
 
         gap: 30px;
+
     }
 
 
-    .project-large .project-image,
+    .project-featured {
+
+        grid-column: auto;
+
+    }
+
+
+    .project-featured .project-image,
     .project-image {
+
         aspect-ratio: 4 / 3;
+
+    }
+
+
+
+    /* ILLUSTRATION GRID */
+
+    .illustration-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+
+    /* SECTION TITLES */
+
+    .design-title,
+    .illustration-title {
+
+        margin-bottom: 25px;
+
     }
 
 }
 
-/* PROJECT IMAGES */
+/* =========================================================
+   RESPONSIVE PORTFOLIO LAYOUT
+   Makes the portfolio use available screen width better
+   ========================================================= */
 
-.project-image {
+/* MAIN CONTENT WIDTH */
+.content {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #222;
+    max-width: none;
+    box-sizing: border-box;
 }
 
-.project-image img {
+/* Keep some breathing room from the edges */
+.content {
+    padding-right: clamp(25px, 4vw, 70px);
+}
+
+/* =========================================================
+   GRAPHIC DESIGN GRID
+   ========================================================= */
+
+.work-grid {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 2.5vw, 40px);
 }
 
-/* -------------------------
-   ILLUSTRATION SECTION
-------------------------- */
-
-.illustration-section {
-    margin-top: 60px;
-}
-
-
-.illustration-feature {
+/* Save The Salmon stays full width */
+.project-featured {
+    grid-column: 1 / -1;
     width: 100%;
-    margin-bottom: 25px;
-    overflow: hidden;
 }
 
-.illustration-feature video {
+/* Let the featured image scale with the available space */
+.project-featured .project-image {
     width: 100%;
-    height: auto;
-    display: block;
+    max-width: none;
 }
+
+/* =========================================================
+   ILLUSTRATION GRID
+   ========================================================= */
 
 .illustration-grid {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 2.5vw, 40px);
 }
 
+/* Keep illustration artwork centred */
 .illustration-item {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .illustration-item img {
@@ -327,6 +585,79 @@ body {
     display: block;
 }
 
-.design-title {
-    margin-bottom: 60px;
+/* =========================================================
+   LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .illustration-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MEDIUM SCREENS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .illustration-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-featured {
+        grid-column: auto;
+    }
+
+    .illustration-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .illustration-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
