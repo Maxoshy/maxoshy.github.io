@@ -155,6 +155,7 @@ body {
 
 
 
+
 /* ------------------------------
    MAIN CONTENT
 ------------------------------ */
@@ -162,10 +163,10 @@ body {
 .content {
     margin-left: 220px;
     width: calc(100% - 220px);
-    max-width: 1400px;
-    padding: 50px;
+    max-width: none;
+    padding: 20px 50px 50px;
+    box-sizing: border-box;
 }
-
 
 /* ------------------------------
    SECTION TITLES
@@ -328,13 +329,10 @@ body {
 ------------------------------ */
 
 .illustration-feature {
-
     width: 100%;
-
-    margin-bottom:40x;
-
+    margin-top: -60px;
+    margin-bottom: 35px;
     overflow: hidden;
-
 }
 
 
@@ -517,22 +515,7 @@ body {
 
 }
 
-/* =========================================================
-   RESPONSIVE PORTFOLIO LAYOUT
-   Makes the portfolio use available screen width better
-   ========================================================= */
 
-/* MAIN CONTENT WIDTH */
-.content {
-    width: 100%;
-    max-width: none;
-    box-sizing: border-box;
-}
-
-/* Keep some breathing room from the edges */
-.content {
-    padding-right: clamp(25px, 4vw, 70px);
-}
 
 /* =========================================================
    GRAPHIC DESIGN GRID
@@ -660,4 +643,267 @@ body {
         grid-template-columns: 1fr;
     }
 
+}
+
+
+/* --------------------------------
+   ABOUT PAGE
+-------------------------------- */
+
+.about-page {
+    padding-top: 50px;
+}
+
+/* ABOUT INTRO */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 70px;
+    min-height: 420px;
+}
+
+.about-text {
+    max-width: 620px;
+}
+
+.about-text h1 {
+    font-size: clamp(70px, 7vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 25px 0 55px;
+}
+
+.about-text p {
+    max-width: 560px;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+}
+
+
+/* ABOUT SECTIONS */
+
+.about-section {
+    margin-top: 75px;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+}
+
+.about-section-heading {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 35px;
+}
+
+
+/* EDUCATION */
+
+.education-list {
+    width: 100%;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 25px 0;
+    border-bottom: 1px solid #444;
+}
+
+.education-item:first-child {
+    border-top: 1px solid #444;
+}
+
+.education-year {
+    font-size: 14px;
+}
+
+.education-info h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.education-info p {
+    margin: 0;
+    opacity: 0.65;
+}
+
+
+/* CAPABILITIES */
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #444;
+}
+
+.capabilities-grid div {
+    padding: 22px 0;
+    border-bottom: 1px solid #444;
+    font-size: 20px;
+}
+
+
+/* --------------------------------
+   ABOUT — MOBILE
+-------------------------------- */
+
+@media (max-width: 800px) {
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        min-height: auto;
+    }
+
+    .about-text h1 {
+        font-size: clamp(55px, 14vw, 90px);
+        letter-spacing: -3px;
+        margin-bottom: 40px;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .about-image img {
+        max-width: 500px;
+    }
+
+    .about-section {
+        margin-top: 70px;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .capabilities-grid div {
+        font-size: 18px;
+    }
+
+}
+
+/* --------------------------------
+   CONTACT PAGE
+-------------------------------- */
+
+.contact-page {
+    padding-top: 50px;
+}
+
+.contact-intro {
+    max-width: 800px;
+    padding-bottom: 100px;
+}
+
+.contact-intro h1 {
+    font-size: clamp(70px, 7vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 25px 0 40px;
+}
+
+.contact-intro p {
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+
+.contact-details {
+    border-top: 1px solid #444;
+}
+
+.contact-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #444;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 22px;
+}
+
+
+/* CONTACT — MOBILE */
+
+@media (max-width: 800px) {
+
+    .contact-intro {
+        padding-bottom: 60px;
+    }
+
+    .contact-intro h1 {
+        font-size: clamp(60px, 15vw, 100px);
+        letter-spacing: -3px;
+    }
+
+    .contact-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+}
+
+/* CONTACT PAGE — GRADIENT FADE */
+
+.contact-page {
+    position: relative;
+    min-height: calc(100vh - 20px);
+    overflow: hidden;
+}
+
+.contact-page::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(184, 255, 56, 0.08) 35%,
+        rgba(243, 155, 201, 0.18) 75%,
+        rgba(217, 77, 165, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-page > * {
+    position: relative;
+    z-index: 1;
 }
