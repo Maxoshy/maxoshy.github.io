@@ -396,6 +396,9 @@ body {
 
         padding: 18px;
 
+       justify-content: space-between;
+gap: 0;
+
         flex-direction: row;
 
         align-items: center;
@@ -430,9 +433,10 @@ body {
     grid-template-rows: auto auto;
     column-gap: 12px;
     row-gap: 0;
-    margin: 0 0 0 auto;
+margin: 0;    
     align-items: center;
-    justify-content: end;
+ justify-content: center;
+   transform: none;
 }
 
 .navigation a {
