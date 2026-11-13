@@ -1938,3 +1938,13 @@ align-items: flex-start;
         margin-top: 20px;
     }
 }
+
+.illustration-caption {
+    margin-top: 8px;
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
